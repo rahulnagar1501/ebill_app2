@@ -14,7 +14,7 @@ function Layout() {
       {/* Dashboard page route */}
       <Stack.Screen
         name="dashboard"
-        options={{ title: 'Dashboard' }}  // Dashboard screen with title
+        options={{ title: 'Dashboard' ,headerShown:false}}  // Dashboard screen with title
       />
     </Stack>
   );

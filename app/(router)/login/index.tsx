@@ -1,3 +1,4 @@
+import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import {
   View,
@@ -9,14 +10,13 @@ import {
 } from 'react-native';
 
 const LoginPage = () => {
+  const router = useRouter()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    if (!email || !password) {
-      Alert.alert('Error', 'Please fill in both email and password');
-      return;
-    }
+    router.push('/dashboard')
+    
 
     // Perform your login logic here, for example API call
     Alert.alert('Login Success', `Welcome ${email}`);
