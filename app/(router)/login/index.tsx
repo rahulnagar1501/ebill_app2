@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
     backgroundColor: 'white',
-    gap: 24
+    gap: 24,
   },
   title: {
     fontSize: 36,
