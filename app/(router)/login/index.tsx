@@ -15,7 +15,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    router.push('/dashboard')
+    router.push('/(drawer)/layoutDrawer')
     
 
     // Perform your login logic here, for example API call

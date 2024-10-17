@@ -1,21 +1,28 @@
 import { Stack } from "expo-router";
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
+import { ThemeContext } from "@/hooks/ThemeContext";
+import { useRef, useState } from "react";
 
 function Layout() {
-  return (
-    <Stack>
-      {/* Home page route */}
-      <Stack.Screen
-        name="index"
-        options={{ headerShown: false }}  // Home screen with no header
-      />
+  const [theme, setTheme] = useState("light"); // Default to light theme
+  const isDarkTheme = theme === "dark";
 
-      {/* Dashboard page route */}
-      <Stack.Screen
-        name="dashboard"
-        options={{ title: 'Dashboard' ,headerShown:false}}  // Dashboard screen with title
-      />
-    </Stack>
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
+  const navigationRef = useRef(null);
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <Stack>
+        {/* Home page route */}
+        <Stack.Screen
+          name="(router)/login"
+          options={{ headerShown: false }} // Home screen with no header
+        />
+
+        {/* Dashboard page route */}
+        <Stack.Screen name="(router)/dashboard" />
+      </Stack>
+    </ThemeContext.Provider>
   );
 }
