@@ -1,12 +1,12 @@
 import { DrawerActions, NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import CustomDrawerContent from "./drawerConent";
-  // Example screen
+// Example screen
 
 import Icon from "react-native-vector-icons/Ionicons";
 import { TouchableOpacity, Switch } from "react-native";
 import { useState } from "react";
-import Index from "../(router)/dashboard"; 
+import Index from "../(router)/dashboard";
 import DashboardScreen from "@/screen/dashboard/dashboard.screen";
 
 const Drawer = createDrawerNavigator();
@@ -23,7 +23,7 @@ const LayoutDrawer = () => {
     <NavigationContainer independent={true}>
       <Drawer.Navigator
         drawerContent={(props) => <CustomDrawerContent {...props} />}
-        screenOptions={({ navigation  }) => ({
+        screenOptions={({ navigation }) => ({
           drawerPosition: "left", // Drawer opens from the left
           drawerStyle: {
             width: 320, // Adjust drawer width
@@ -46,7 +46,7 @@ const LayoutDrawer = () => {
           // Toggle button
           headerRight: () => (
             <TouchableOpacity
-              style={{ marginHorizontal: 15 }}
+              style={{ marginHorizontal: 20 }}
               onPress={toggleTheme}
             >
               <Switch value={isDarkTheme} onValueChange={toggleTheme} />
@@ -62,10 +62,10 @@ const LayoutDrawer = () => {
         <Drawer.Screen
           name="dashboard"
           component={Index} // Example HomeScreen component
-          options={{ title: "home"}}
-        
+          options={{ title: "home" }}
+
         />
-       
+
       </Drawer.Navigator>
     </NavigationContainer>
   );
