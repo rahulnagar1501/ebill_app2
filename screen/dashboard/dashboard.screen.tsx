@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { Ionicons, FontAwesome5, MaterialIcons } from '@expo/vector-icons';
+import { Ionicons, FontAwesome5, MaterialIcons, Entypo } from '@expo/vector-icons';
 import Feather from '@expo/vector-icons/Feather';
 
 
@@ -43,7 +43,7 @@ const DashboardScreen = () => {
     ];
 
     return (
-     
+
         <ScrollView style={styles.container}>
             <Text style={styles.header}>Dashboard</Text>
             {cardData.map((card, index) => (
@@ -69,8 +69,50 @@ const DashboardScreen = () => {
                     </View>
                 </View>
             ))}
-        </ScrollView>
-       
+
+            <View style={styles.card}>
+                <View style={styles.childcardtwo}>
+                    <Text style={styles.cardDescription}>Chart Line</Text>
+                    <Entypo name="dots-three-horizontal" size={24} color="black" />
+                </View>
+                <View style={[styles.childcardtwo, styles.height]}>
+
+                </View>
+            </View>
+            <View style={styles.card}>
+                <View style={styles.childcardtwo}>
+                    <Text style={styles.cardDescription}>Chart Bar</Text>
+                    <Entypo name="dots-three-horizontal" size={24} color="black" />
+                </View>
+                <View style={[styles.childcardtwo, styles.height]}>
+
+                </View>
+            </View>
+            <View style={styles.card}>
+                <View style={styles.childcardtwo}>
+                    <Text style={styles.cardDescription}>Chart Doughnut</Text>
+                    <Entypo name="dots-three-horizontal" size={24} color="black" />
+                </View>
+                <View style={[styles.childcardtwo, styles.height]}>
+
+                </View>
+                <View style={styles.language}>
+                    <View style={styles.languagecontent}>
+                        <Entypo name="dot-single" size={24} color="#5b6582" />
+                        <Text>HTML</Text>
+                    </View>
+                    <View style={styles.languagecontent}>
+                        <Entypo name="dot-single" size={24} color="#98a4c7" />
+                        <Text>CSS</Text>
+                    </View>
+                    <View style={styles.languagecontent}>
+                        <Entypo name="dot-single" size={24} color="#36a2eb" />
+                        <Text>Javascript</Text>
+                    </View>
+                </View>
+            </View>
+        </ScrollView >
+
     );
 };
 
@@ -88,13 +130,7 @@ const styles = StyleSheet.create({
     },
     card: {
         backgroundColor: '#FFF',
-        padding: 20,
         marginBottom: 20,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.2,
-        shadowRadius: 1.41,
-        elevation: 2,
         display: "flex",
         justifyContent: "space-between",
     },
@@ -102,16 +138,37 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginBottom: 30,
+        padding: 20,
     },
     childcardtwo: {
         flexDirection: 'row',
         justifyContent: 'space-between',
+        borderTopWidth: 1,
+        borderTopColor: '#f2f3f8',
+        borderStyle: 'solid',
+        padding: 20,
+        paddingTop: 10,
+        alignItems: "center"
     },
     cardRow: {
         flexDirection: 'row',
-        alignItems: 'center',
         marginBottom: 20,
+
+    },
+    language: {
+        borderTopWidth: 1,
+        borderTopColor: '#f2f3f8',
+        borderStyle: 'solid',
+        flexDirection: "row",
+        justifyContent: "space-evenly"
+    },
+    languagecontent: {
+        flexDirection: "row",
+        paddingVertical: 10,
+        alignItems: "center"
+    },
+    height: {
+        height: 100
     },
     columntwo: {
         gap: 20,
@@ -130,7 +187,6 @@ const styles = StyleSheet.create({
     cardDescription: {
         fontSize: 14,
         color: '#6C757D',
-        marginTop: 10,
     },
     cardChangePositive: {
         fontSize: 16,
